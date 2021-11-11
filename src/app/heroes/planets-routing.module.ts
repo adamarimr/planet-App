@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListComponent } from './pages/list/list.component';
 import { AddComponent } from './pages/add/add.component';
 import { SearchComponent } from './pages/search/search.component';
-import { HeroeComponent } from './pages/heroe/heroe.component';
+import { PlanetComponent } from './pages/planet/planet.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
       { path: 'add', component: AddComponent },
       { path: 'edit/:id', component: AddComponent },
       { path: 'search', component: SearchComponent },
-      { path: ':id', component: HeroeComponent },
+      { path: ':id', component: PlanetComponent },
       { path: '**', redirectTo: 'list' },
     ]
   }
@@ -29,4 +29,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class HeroesRoutingModule { }
+export class PlanetsRoutingModule { }
