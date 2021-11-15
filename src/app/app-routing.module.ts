@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'planets',
-    loadChildren: () => import('./heroes/planets.module').then(m => m.PlanetsModule)
+    loadChildren: () => import('./planets/planets.module').then(m => m.PlanetsModule)
   },
   {
     path: '404',
