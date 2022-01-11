@@ -1,1 +1,37 @@
-<p>list works!</p>
+<h1>Planet List</h1>
+<mat-divider></mat-divider>
+<br>
+
+<div fxLayout="row wrap">
+    <div fxFlex="20">
+        <mat-card *ngFor="let planet of planets">
+            <mat-card-header>
+                <mat-card-title>{{ planet.planet }}</mat-card-title>
+                <mat-card-title>Habitability: {{ planet.habitability }}</mat-card-title>
+            </mat-card-header>
+        
+            <img mat-card-image src="assets/planets/{{planet.id}}.png">
+        
+            <mat-card-content>
+                <h3>Size: {{planet.size}}</h3>
+                <p>
+                    <strong>First appearence: </strong>{{planet.first_appearance}}
+                    <br>
+                    <strong>Habitants: </strong> {{planet.habitants}}
+                </p>
+            </mat-card-content>
+        
+            <mat-card-actions>
+                <button mat-button color="warn">
+                    Read more
+                </button>
+        
+                <button mat-button color="info">
+                    Edit
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    
+</div>
+
