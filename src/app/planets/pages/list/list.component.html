@@ -1,0 +1,18 @@
+<h1>Planet List</h1>
+<mat-divider></mat-divider>
+<br>
+
+<div fxLayout="row wrap"
+    fxLayout.xs="column"
+    fxLayoutAlign="center"
+    fxLayoutGap="20px">
+
+    <div fxFlex="20" 
+        fxFlex.lg="15"
+        fxFlex.sm="30"
+        *ngFor="let planet of planets">
+
+       <app-planet-card [planet]="planet"></app-planet-card>
+    </div>
+    
+</div>
