@@ -8,6 +8,8 @@ import { PlanetsRoutingModule } from './planets-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
 import { PlanetComponent } from './pages/planet/planet.component';
+import { PlanetCardComponent } from './components/planet-card/planet-card.component';
+import { ImagePipe } from './pipes/image.pipe';
 
 
 
@@ -17,7 +19,9 @@ import { PlanetComponent } from './pages/planet/planet.component';
     SearchComponent,
     PlanetComponent,
     HomeComponent,
-    ListComponent
+    ListComponent,
+    PlanetCardComponent,
+    ImagePipe
   ],
   imports: [
     CommonModule,
