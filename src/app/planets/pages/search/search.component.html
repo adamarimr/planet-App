@@ -1,1 +1,37 @@
-<p>search works!</p>
+<div fxLayout="column">
+    <div>
+        <h1>Search Planet</h1>
+        <mat-divider></mat-divider>
+    </div>
+    <div>
+        <h3>Search</h3>
+
+        <mat-form-field>
+            <input type="text" 
+                placeholder="Pick one" 
+                aria-label="Number" 
+                matInput
+                [(ngModel)]="term"
+                [matAutocomplete]="auto"
+                (input)="search()">
+                
+            <mat-autocomplete autoActiveFirstOption 
+                #auto="matAutocomplete" 
+                (optionSelected)="selectedOption( $event )">
+                
+                    <mat-option *ngFor="let planet of planets" [value]="planet">
+                        {{ planet.planet }}
+                    </mat-option>
+
+                    <mat-option value="" *ngIf="planets.length === 0 && term.trim().length > 0">
+                        No results for {{ term }}
+                    </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <pre>{{selectedPlanet | json}}</pre>
+    </div>
+
+</div>

@@ -10,6 +10,8 @@ import { MaterialModule } from '../material/material.module';
 import { PlanetComponent } from './pages/planet/planet.component';
 import { PlanetCardComponent } from './components/planet-card/planet-card.component';
 import { ImagePipe } from './pipes/image.pipe';
+import { FormsModule } from '@angular/forms';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
 
 
@@ -21,11 +23,13 @@ import { ImagePipe } from './pipes/image.pipe';
     HomeComponent,
     ListComponent,
     PlanetCardComponent,
-    ImagePipe
+    ImagePipe,
+    ConfirmComponent
   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
+    FormsModule,
     PlanetsRoutingModule,
     MaterialModule
   ]

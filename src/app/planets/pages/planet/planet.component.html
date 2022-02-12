@@ -1,0 +1,36 @@
+<mat-grid-list cols="1" *ngIf="!planet; else divPlanet">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divPlanet>
+    <div fxLayout="row"
+        fxLayout.sx="column"
+        fxLayoutGap="30px">
+
+        <div fxFlex="50">
+            <h1>{{ planet.planet}} <small> - First appearence was {{planet.first_appearance}} ago</small></h1>
+            <mat-divider></mat-divider>
+            <hr>
+            <img [src]="planet | image">
+        </div>
+
+        <div fxFlex="50">
+            <h1>Habitants: {{planet.habitants}}</h1>
+            <mat-divider></mat-divider>
+
+            <mat-list>
+                <mat-list-item>Size: {{planet.size}}</mat-list-item>
+                <mat-list-item>Habitability: {{planet.habitability}}</mat-list-item>
+            </mat-list>
+
+            <br>
+            <button mat-button color="warn"
+                (click)="goBack()">
+                Go back
+            </button>
+        </div>
+
+    </div> 
+</ng-template>
