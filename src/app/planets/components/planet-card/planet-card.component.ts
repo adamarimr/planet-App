@@ -4,7 +4,11 @@ import { Planet } from '../../interfaces/planets.interface';
 @Component({
   selector: 'app-planet-card',
   templateUrl: './planet-card.component.html',
-  styleUrls: ['./planet-card.component.css']
+  styles: [`
+  mat-card {
+    margin-top: 20px
+  }
+`]
 })
 export class PlanetCardComponent implements OnInit {
 
