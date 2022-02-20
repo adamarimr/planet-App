@@ -1,21 +1,22 @@
-<p>error-page works!</p>
+<h1>Error 404</h1>
+<span>This page doesn't exist, try...</span>
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="20px">
 
-<ul>
-    <li>
-        <a routerLink="/auth/login">
+    <button mat-raised-button color="primary">
+        <span routerLink="/auth/login">
             Login
-        </a>
-    </li>
+        </span>
+    </button>
 
-    <li>
-        <a routerLink="/auth/register">
+    <button mat-raised-button color="primary">
+        <span routerLink="/auth/register">
             Register
-        </a>
-    </li>
+        </span>
+    </button>
 
-    <li>
-        <a routerLink="/heroes/list">
+    <button mat-raised-button color="primary">
+        <span routerLink="/planets/list">
             List
-        </a>
-    </li>
-</ul>
+        </span>
+    </button>
+</div>

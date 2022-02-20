@@ -1,0 +1,68 @@
+<h1>
+    {{ (planet.id) ? 'Edit' : 'New' }} Planet
+    <small>{{planet.planet}}</small>
+</h1>
+
+<div fxLayout="row" fxLayoutGap="40px" fxLayout.xs="column">
+
+    <div fxFlex="50" fxLayout="column">
+
+        <div fxLayout="row" fxLayout.xs="col" fxLayoutGap="20px">
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
+                <mat-label>Planet Name</mat-label>
+                <input matInput type="text" required [(ngModel)]="planet.planet">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="100">
+                <mat-label>Habitability</mat-label>
+                <input matInput type="text" required [(ngModel)]="planet.habitability">
+            </mat-form-field>
+        </div>
+
+
+        <mat-form-field fxFlex="100">
+            <mat-label>Size</mat-label>
+            <mat-select [(ngModel)]="planet.size" required>
+                <mat-option *ngFor="let size of sizes" [value]="size.id">
+                    {{size.desc}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100">
+            <mat-label>First appearance</mat-label>
+            <input matInput type="text" required [(ngModel)]="planet.first_appearance">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100">
+            <mat-label>Habitants</mat-label>
+            <input matInput type="text" required [(ngModel)]="planet.habitants">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100">
+            <mat-label>Photo</mat-label>
+            <input matInput type="url" required [(ngModel)]="planet.alt_img">
+        </mat-form-field>
+
+        <br>
+
+        <div fxLayout>
+            <button mat-raised-button color="primary" (click)="saveData()">
+                <mat-icon>save</mat-icon>
+                {{ (planet.id) ? 'Update' : 'Save'}}
+            </button>
+
+            <span class="spacer"></span>
+
+            <button mat-raised-button color="warn" *ngIf="planet.id"
+                (click)="deletePlanet()">
+                <mat-icon>delete</mat-icon>
+                Delete
+            </button>
+        </div>
+
+    </div>
+
+    <div fxFlex="50">
+        <img [src]="planet | image">
+    </div>
