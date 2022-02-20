@@ -12,6 +12,7 @@ import { PlanetCardComponent } from './components/planet-card/planet-card.compon
 import { ImagePipe } from './pipes/image.pipe';
 import { FormsModule } from '@angular/forms';
 import { ConfirmComponent } from './components/confirm/confirm.component';
+import { ErrorPageComponent } from '../shared/error-page/error-page.component';
 
 
 
@@ -24,7 +25,8 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     ListComponent,
     PlanetCardComponent,
     ImagePipe,
-    ConfirmComponent
+    ConfirmComponent,
+    ErrorPageComponent
   ],
   imports: [
     CommonModule,
